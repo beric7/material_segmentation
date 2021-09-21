@@ -6,7 +6,7 @@ The structural material segmentation dataset can be used for auxiliary structura
 ## References
 ### Papers
 - **"Development of Open-source Collaborative Structural Inspection Datasets"** [paper]()
-- - references and introduces Structural Materials dataset
+  - references and introduces Structural Materials dataset
 ### Dataset
 The Structural Material dataset and information can be found [here](). 
 **Please cite both the dataset and the journal article if you are using it.** 
