@@ -1,26 +1,33 @@
-# material_segmentation
-structural material segmentation
+# Material Segmentation
+The structural material segmentation dataset can be used for auxiliary structural inspection tasks to aid in the localization of structural damage, provide context to predictions, and for more futuristic style transfer [SPADE](https://arxiv.org/abs/1903.07291) and [GAN](https://arxiv.org/abs/1912.04958) / [GAN-Inversion](https://arxiv.org/abs/2101.05278) applications. 
 
-Code for the semantic segmentation of structural material. This repository is in connection to the paper 
-"Structural Datasets: A Contribution". 
+## Results 
 
-The following code is included: 
-- Pre-processing data
-- Training
-- Testing
-- Prediction visualizations
-
-Pre-processing data
-
-We have included files to resize images, rescale segmentation masks, and randomly sort images into Testing and Training. Additionally, we have provided the code to run the labelme2016 processing step for converting JSON annotations and image pairs into segmentation masks and one-hot-encoded vector images. 
-
-Training
-
-In order to train the model follow the procedure outlined below:
-
-During training there are model checkpoints at points defined during training. At these checkpoints one can test the current model on the validation data 
-
-Testing
+## References
+### Papers
+- [Development of Open-source Collaborative Structural Inspection Datasets]() Paper which references and introduces Structural Materials dataset
+### Dataset
+The Structural Material dataset and information can be found [here](). 
+**Please cite both the dataset and the journal article if you are using it.** 
+The four semantic classes in the dataset are:
+```
+Background
+Structural Concrete
+Structural Steel 
+Metal Decking
+```
+### Model
+The trained model weights and information can be found [here](). 
+**Please cite both the model and the journal article if you are using it.** 
+## Requirements
+The most important environment configurations are the following:
+- Pytorch == 1.4
+- Python == 3.6
+- 
+## Evaluating Trained DeeplabV3+ Model
+- Download the DeeplabV3+ [trained model weights](10.7294/16624495)
+  
+## Testing the Trained DeeplabV3+ Model
 Once training has converged or when it has stopped, we can used the best checkpoint based on the validation data results. This checkpoint is loaded and our test data is evaluated. 
 
 The code for capturing the performance metrics is here:
@@ -30,3 +37,21 @@ Prediction Visualizations:
 The code for visualizing the predictions on images is here:
 
 We have also provided code on how to concatenate the mask, overlays, and images to create prediction grids. 
+
+## Training with the Structural Material dataset
+
+- Clone the repository
+- Download the [dataset]()
+
+During training there are model checkpoints at points defined during training. At these checkpoints one can test the current model on the validation data 
+
+## Training with a custom dataset
+1. Clone the repository
+
+
+## Citation
+```
+hahasadf
+```
+
+
