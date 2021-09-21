@@ -41,6 +41,11 @@ We have also provided code on how to concatenate the mask, overlays, and images 
 - Clone the repository
 - Download the [dataset]()
 
+```
+python main_plus.py -data_directory '/PATH TO DATA DIRECTORY/' -exp_directory '/PATH TO SAVE CHECKPOINTS/' \
+--epochs 40 --batch 2
+```
+
 During training there are model checkpoints at points defined during training. At these checkpoints one can test the current model on the validation data 
 
 ## Training with a custom dataset
