@@ -1,15 +1,6 @@
 # Material Segmentation
-The structural material segmentation dataset can be used for auxiliary structural inspection tasks to aid in the localization of structural damage, provide context to predictions, and for more futuristic style transfer [SPADE](https://arxiv.org/abs/1903.07291) and [GAN](https://arxiv.org/abs/1912.04958) / [GAN-Inversion](https://arxiv.org/abs/2101.05278) applications. 
+(RESULTS)
 
-## Results 
-
-## References
-### Papers
-- **"Development of Open-source Collaborative Structural Inspection Datasets"** [paper]()
-  - references and introduces Structural Materials dataset
-### Dataset
-The Structural Material dataset and information can be found [here](). 
-**Please cite both the dataset and the journal article if you are using it.** 
 The four semantic classes in the dataset are:
 ```
 Background
@@ -17,9 +8,16 @@ Structural Concrete
 Structural Steel 
 Metal Decking
 ```
-### Model
-The trained model weights and information can be found [here](). 
-**Please cite both the model and the journal article if you are using it.** 
+
+[Paper]() [Dataset]() [Trained models]()
+
+The structural material segmentation dataset can be used for auxiliary structural inspection tasks to aid in the localization of structural damage, provide context to predictions, and for more futuristic style transfer [SPADE](https://arxiv.org/abs/1903.07291) and [GAN](https://arxiv.org/abs/1912.04958) / [GAN-Inversion](https://arxiv.org/abs/2101.05278) applications. 
+
+## Results 
+
+## References
+**Please cite both the dataset and the journal article if you are using it.** 
+
 ## Requirements
 The most important environment configurations are the following:
 - Pytorch == 1.4
