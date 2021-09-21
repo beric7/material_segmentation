@@ -9,7 +9,7 @@ Structural Steel
 Metal Decking
 ```
 
-\[ [Paper]() \] [Dataset]() [Trained models]()
+\[[Paper]()\] \[[Dataset]()\] \[[Trained models]()\]
 
 The structural material segmentation dataset can be used for auxiliary structural inspection tasks to aid in the localization of structural damage, provide context to predictions, and for more futuristic style transfer [SPADE](https://arxiv.org/abs/1903.07291) and [GAN](https://arxiv.org/abs/1912.04958) / [GAN-Inversion](https://arxiv.org/abs/2101.05278) applications. 
 
