@@ -21,20 +21,23 @@ The structural material segmentation dataset can be used for auxiliary structura
 The most important environment configurations are the following:
 - Pytorch >= 1.4
 - Python >= 3.6
+- tqdm
+- matplotlib
+- sklearn
 
-## Evaluating Trained DeeplabV3+ Model
+## Evaluating the Trained DeeplabV3+ Model
 - Download the DeeplabV3+ :red_circle:[trained model weights](/access/not_ready.png)
+- Configure run_metrics_evaluation.py
+
+You will get the f1 socre, the jaccard index, and the confusion matrix. We suggest running this in an IDE. 
   
-## Testing the Trained DeeplabV3+ Model
+## Visualizing the results from the Trained DeeplabV3+ Model
 Once training has converged or when it has stopped, we can used the best checkpoint based on the validation data results. This checkpoint is loaded and our test data is evaluated. 
 
-The code for capturing the performance metrics is here:
-
-Prediction Visualizations:
-
-The code for visualizing the predictions on images is here:
-
-We have also provided code on how to concatenate the mask, overlays, and images to create prediction grids. 
+run_show_results__.py
+- gets predicted masks
+- gets combined mask and image overaly
+- gets one-hot-encoded vector images of predictions
 
 ## Training with the Structural Material dataset
 
@@ -71,8 +74,8 @@ During training there are model checkpoints saved every epoch. At these checkpoi
 
 ## Training with a custom dataset
 1. Clone the repository
-2. Ensure your image and mask data is 512x512 pixels.
-3. Ensure that if you resized your masks to 512x512 that they did not interpolate the colors into more color classes than you have. The expected format is RGB. 
+2. Ensure your image and mask data is 512x512 pixels. *(can use the rescale_image.py in Pre-processing)*
+3. Ensure that if you resized your masks to 512x512 that they did not interpolate the colors into more color classes than you have. The expected format is RGB. *(can use the rescale_segmentation.py in Pre-processing)*
 4. You now need to go into the datahandler_plus.py file and edit the colors as necessary. For example, the Structural Materials dataset used the following format, which is in the datahandler_plus.py in this repository.
 ```
 # color mapping corresponding to classes
@@ -87,6 +90,17 @@ self.mapping = {(0,0,0): 0, (0,0,128): 1, (0,128,0): 2, (0,128,128): 3}
 6. Adjust the number of 'channels' in the training command to match the number of channels that you have.
 7. Ensure that your DATA folder has a folder called 'Train' and a folder called 'Test'. Inside each of those folders include the mask and image pairs in their respective folders (Masks, Images). 
 8. If you have set this up correctly then you are now ready to begin.
+
+## Building a Custom Dataset
+The images in the dataset were annotated using [labelme](https://github.com/wkentaro/labelme). We suggest that you use this tool. 
+
+Before beginning to annotate, we suggest that you use jpeg for the RGB image files. We advised against beginning with images which are already resized. 
+
+After annotating you will have matching JSON and jpeg files, indicating the annotation and image pair respectfully. 
+
+You will take these files and generate masks and one-hot-encoded vector files using run_labelme2voc_.py file in Pre-processing. Then you can re-scale these images and masks using the respective files in Pre-processing. You can also use the random sort function we have created to randomly split the data. 
+
+The labels_corrosion_segmentation.txt file contains the class labels needed for the run_labelme2voc_.py function. If your classes are different then they need to be reflected in this particular file.
 
 ## Citation
 ```
