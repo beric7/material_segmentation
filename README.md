@@ -21,9 +21,10 @@ The structural material segmentation dataset can be used for auxiliary structura
 
 <p align="center">
     <img src="/figures/result_table.jpg" | width=600/>
+</p>
+<p align="center">
     <img src="/figures/confusion matrix.png" | width=400/>
 </p>
-
 ## Requirements
 The most important environment configurations are the following:
 - Pytorch >= 1.4
