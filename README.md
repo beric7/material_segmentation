@@ -56,7 +56,7 @@ Neccesary and optional inputs to the main_plus.py file:
  --output_stride = deeplab hyperparameter for output stride
  --channels = number of classes (we have four, the default has been set to four). 
  --class_weights = weights for the cross entropy loss function
- --folder_structure = 
+ --folder_structure = 'sep' or 'single' (sep = separate (Test, Train), single = only looks at one folder (Train). If you want to get validation results instead of getting back your test dataset results then you should use 'single'. If you want to test directly on the Test dataset then you should use 'sep'.
  --pretrained = if there is a pretrained model to start with then include the path to the model weights here. 
 ```
 
