@@ -29,7 +29,7 @@ The most important environment configurations are the following:
 - Download the DeeplabV3+ :red_circle:[trained model weights](/access/not_ready.png)
 - Configure run_metrics_evaluation.py
 
-You will get the f1 socre, the jaccard index, and the confusion matrix. We suggest running this in an IDE. 
+You will get the f1 score, the jaccard index, and the confusion matrix. We suggest running this in an IDE. 
   
 ## Visualizing the results from the Trained DeeplabV3+ Model
 Once training has converged or when it has stopped, we can used the best checkpoint based on the validation data results. This checkpoint is loaded and our test data is evaluated. 
