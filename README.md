@@ -42,7 +42,7 @@ We have also provided code on how to concatenate the mask, overlays, and images 
 - Download the [dataset]()
 - 
 <p align="center">
-    <img src="/figures/training_inputs.png" />
+    <img src="/figures/training inputs.png" />
 </p>
 ```
 python main_plus.py -data_directory '/PATH TO DATA DIRECTORY/' -exp_directory '/PATH TO SAVE CHECKPOINTS/' \
