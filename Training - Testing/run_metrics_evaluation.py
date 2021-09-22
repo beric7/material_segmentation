@@ -26,5 +26,8 @@ model.eval()   # Set model to evvar_2plus_weights_28aluate mode
 
 iOU, f1, confm_sum = iterate_data(model, data_dir)
 
+print('IoU: ' + str(iOU))
+print('f1 score: ' + str(f1))
+
 plot_confusion_matrix(confm_sum, target_names=['Background', 'Concrete', 'Steel', 'Metal Decking'], normalize=True, 
                       title='Confusion Matrix')
