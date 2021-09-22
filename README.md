@@ -40,7 +40,10 @@ We have also provided code on how to concatenate the mask, overlays, and images 
 
 - Clone the repository
 - Download the [dataset]()
-
+- 
+<p align="center">
+    <img src="/figures/training_inputs.png" />
+</p>
 ```
 python main_plus.py -data_directory '/PATH TO DATA DIRECTORY/' -exp_directory '/PATH TO SAVE CHECKPOINTS/' \
 --epochs 40 --batch 2
