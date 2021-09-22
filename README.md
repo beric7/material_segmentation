@@ -13,7 +13,7 @@ Structural Steel
 Metal Decking
 ```
 ***Coming soon in November***
-\[[Paper]('/access/not_ready.png)\] \[[Dataset](/access/not_ready.png)\] \[[Trained models](/access/not_ready.png)\]
+:red_circle:\[[Paper](/access/not_ready.png)\] :red_circle:\[[Dataset](/access/not_ready.png)\] :red_circle:\[[Trained models](/access/not_ready.png)\]
 
 The structural material segmentation dataset can be used for auxiliary structural inspection tasks to aid in the localization of structural damage, provide context to predictions, and for more futuristic style transfer [SPADE](https://arxiv.org/abs/1903.07291) and [GAN](https://arxiv.org/abs/1912.04958) / [GAN-Inversion](https://arxiv.org/abs/2101.05278) applications. 
 
@@ -23,7 +23,7 @@ The most important environment configurations are the following:
 - Python == 3.6
 - 
 ## Evaluating Trained DeeplabV3+ Model
-- Download the DeeplabV3+ [trained model weights](/access/not_ready.png)
+- Download the DeeplabV3+ :red_circle:[trained model weights](/access/not_ready.png)
   
 ## Testing the Trained DeeplabV3+ Model
 Once training has converged or when it has stopped, we can used the best checkpoint based on the validation data results. This checkpoint is loaded and our test data is evaluated. 
@@ -39,7 +39,7 @@ We have also provided code on how to concatenate the mask, overlays, and images 
 ## Training with the Structural Material dataset
 
 1. Clone the repository
-2. Download the [dataset]()
+2. Download the :red_circle:[dataset](/access/not_ready.png)
 3. Go into the Training folder
 4. Create a DATA folder
 5. Copy and paste the Train and Test folders for 512x512 images from the dataset you downloaded into the DATA folder
