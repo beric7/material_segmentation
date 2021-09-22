@@ -9,6 +9,7 @@ import datahandler_plus
 import argparse
 import os
 import torch
+import numpy
 torch.cuda.empty_cache()
 
 """
@@ -26,35 +27,49 @@ parser.add_argument("--epochs", default=10, type=int)
 parser.add_argument("--batchsize", default=2, type=int)
 parser.add_argument("--output_stride", default=8, type=int)
 parser.add_argument("--channels", default=4, type=int)
-parser.add_argument("--pretrained", default='')
-
+parser.add_argument("--class_weights", nargs='+', default=None)
+parser.add_argument("--folder_structure", default='sep', help='sep or single')
 args = parser.parse_args()
 
 bpath = args.exp_directory
+print('Export Directory: ' + bpath)
 data_dir = args.data_directory
+print('Data Directory: ' + data_dir)
 epochs = args.epochs
+print('Epochs: ' + str(epochs))
 batchsize = args.batchsize
+print('Batch size: ' + str(batchsize))
 output_stride = args.output_stride
 channels = args.channels
-model_path = args.pretrained
-print('loading pre-trained model from saved state: ' + args.pretrained)
-if model_path != '':
-    try:
-        model = torch.load(model_path)
-        print('LOADED MODEL')
-    except:
-        print('model path did not load')
-        model = createDeepLabv3Plus(outputchannels=channels, output_stride=output_stride)
+print('Number of classes: ' + str(channels))
+class_weights = args.class_weights
+print('Class weights: ' + str(class_weights))
+folder_structure = args.folder_structure
+print('folder structure: ' + folder_structure)
 
-    model = createDeepLabv3Plus(outputchannels=channels, output_stride=output_stride)
-    
+if not os.path.exists(bpath): # if it doesn't exist already
+    os.makedirs(bpath) 
+
+# Create the deeplabv3 resnet101 model which is pretrained on a subset of COCO train2017, 
+# on the 20 categories that are present in the Pascal VOC dataset.
+# TODO still need to be able to load pre-trained models into the network. 
+model = createDeepLabv3Plus(outputchannels=channels, output_stride=output_stride)
 model.train()
-# Create the experiment directory if not present
-if not os.path.isdir(bpath):
-    os.mkdir(bpath)
-
+    
 # Specify the loss function
-criterion = torch.nn.CrossEntropyLoss()
+if class_weights == None:
+    print('class not weighted')
+    criterion = torch.nn.CrossEntropyLoss()
+elif class_weights != None and len(class_weights) == channels:
+    print('class weighted')
+    class_weights =  numpy.array(class_weights).astype(float)
+    torch_class_weights = torch.FloatTensor(class_weights).cuda()
+    criterion = torch.nn.CrossEntropyLoss(weight=torch_class_weights)
+else:
+    print('channels did not allign with class weights - default applied')
+    print('class not weighted')
+    criterion = torch.nn.CrossEntropyLoss()
+    
 # Specify the optimizer with a lower learning rate
 optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
 
@@ -62,7 +77,11 @@ optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
 metrics = {'f1_score': f1_score, 'jaccard_score': jaccard_score}
 
 # Create the dataloader
-dataloaders = datahandler_plus.get_dataloader_sep_folder(data_dir, batch_size=batchsize)
+if folder_structure == 'sep':
+    dataloaders = datahandler_plus.get_dataloader_sep_folder(data_dir, batch_size=batchsize)
+else:
+    dataloaders = datahandler_plus.get_dataloader_single_folder(data_dir, batch_size=batchsize)
+    
 trained_model = train_model(model, criterion, dataloaders,
                             optimizer, bpath=bpath, metrics=metrics, num_epochs=epochs)
 

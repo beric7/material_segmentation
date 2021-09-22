@@ -47,8 +47,10 @@ class SegDataset(Dataset):
         # ---------------------------------------------------------------------
         # 0 = background (Black)
         # 1 = Steel (Red)
+        # 2 = Concrete (Green)
+        # 3 = Metal Deck (Yellow)
         # ---------------------------------------------------------------------
-        self.mapping = {(0,0,0): 0, (255,255,255): 1}
+        self.mapping = {(0,0,0): 0, (0,0,128): 1, (0,128,0): 2, (0,128,128): 3}
         
         # Determine if we are splitting the dataset by a percentage
         if not fraction:
