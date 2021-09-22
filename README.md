@@ -67,7 +67,7 @@ python main_plus.py -data_directory '/PATH TO DATA DIRECTORY/' -exp_directory '/
 --epochs 40 --batch 2
 ```
 
-During training there are model checkpoints saved every epoch. At these checkpoints the model is compared against the test data. If the test scores are better than the best score, then it is saved. 
+During training there are model checkpoints saved every epoch. At these checkpoints the model is compared against the test or validation data. If the test or validation scores are better than the best score, then it is saved. 
 
 ## Training with a custom dataset
 1. Clone the repository
