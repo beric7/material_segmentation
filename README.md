@@ -103,7 +103,7 @@ self.mapping = {(0,0,0): 0, (0,0,128): 1, (0,128,0): 2, (0,128,128): 3}
 ## Building a Custom Dataset
 (The images in the dataset were annotated using [labelme](https://github.com/wkentaro/labelme). We suggest that you use this tool)
 
-0. **If you are planning to extend on the corrosion dataset, then please read the annotation guidelines provided by the author in the :red_circle: [corrosion dataset](/access/not_ready.png) repository.**
+0. **If you are planning to extend on the material dataset, then please read the annotation guidelines provided by the author in the :red_circle: [material dataset](/access/not_ready.png) repository.**
 
 1. Before beginning to annotate, we suggest that you use jpeg for the RGB image files. We advised against beginning with images which are already resized. 
 
