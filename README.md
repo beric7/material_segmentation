@@ -1,8 +1,8 @@
 # Material Segmentation
 
 <p align="center">
-    <img src="/figures/ex 3.jpeg" />
-    <img src="/figures/ex 1.jpeg" />
+    <img src="/figures/ex 3.jpeg" | width=800/>
+    <img src="/figures/ex 1.jpeg" | width=800/>
 </p>
 
 The four semantic classes in the dataset are:
