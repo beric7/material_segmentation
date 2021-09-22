@@ -20,8 +20,8 @@ The structural material segmentation dataset can be used for auxiliary structura
 ## Results
 
 <p align="center">
-    <img src="/figures/result_table.jpg" | width=800/>
-    <img src="/figures/confusion matrix.png" | width=600/>
+    <img src="/figures/result_table.jpg" | width=600/>
+    <img src="/figures/confusion matrix.png" | width=400/>
 </p>
 
 ## Requirements
