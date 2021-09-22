@@ -12,8 +12,8 @@ Structural Concrete
 Structural Steel 
 Metal Decking
 ```
-
-\[[Paper]()\] \[[Dataset]()\] \[[Trained models]()\]
+***Coming soon in November***
+\[[Paper]('/access/not_ready.png)\] \[[Dataset](/access/not_ready.png)\] \[[Trained models](/access/not_ready.png)\]
 
 The structural material segmentation dataset can be used for auxiliary structural inspection tasks to aid in the localization of structural damage, provide context to predictions, and for more futuristic style transfer [SPADE](https://arxiv.org/abs/1903.07291) and [GAN](https://arxiv.org/abs/1912.04958) / [GAN-Inversion](https://arxiv.org/abs/2101.05278) applications. 
 
@@ -23,7 +23,7 @@ The most important environment configurations are the following:
 - Python == 3.6
 - 
 ## Evaluating Trained DeeplabV3+ Model
-- Download the DeeplabV3+ [trained model weights](10.7294/16624495)
+- Download the DeeplabV3+ [trained model weights](/access/not_ready.png)
   
 ## Testing the Trained DeeplabV3+ Model
 Once training has converged or when it has stopped, we can used the best checkpoint based on the validation data results. This checkpoint is loaded and our test data is evaluated. 
@@ -90,7 +90,9 @@ self.mapping = {(0,0,0): 0, (0,0,128): 1, (0,128,0): 2, (0,128,128): 3}
 
 ## Citation
 ```
-hahasadf
+Structural Material Dataset: 
+Structural Material Model:
+Paper:
 ```
 
 
