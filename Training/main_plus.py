@@ -28,7 +28,7 @@ parser.add_argument("--batchsize", default=2, type=int)
 parser.add_argument("--output_stride", default=8, type=int)
 parser.add_argument("--channels", default=4, type=int)
 parser.add_argument("--class_weights", nargs='+', default=None)
-parser.add_argument("--folder_structure", default='sep', help='sep or single')
+parser.add_argument("--folder_structure", default='single', help='sep or single')
 args = parser.parse_args()
 
 bpath = args.exp_directory
