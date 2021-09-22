@@ -27,14 +27,14 @@ The most important environment configurations are the following:
 
 ## Evaluating the Trained DeeplabV3+ Model
 - Download the DeeplabV3+ :red_circle:[trained model weights](/access/not_ready.png)
-- Configure run_metrics_evaluation.py
+- Configure ***run_metrics_evaluation.py***
 
 You will get the f1 score, the jaccard index, and the confusion matrix. We suggest running this in an IDE. 
   
 ## Visualizing the results from the Trained DeeplabV3+ Model
 Once training has converged or when it has stopped, we can used the best checkpoint based on the validation data results. This checkpoint is loaded and our test data is evaluated. 
 
-run_show_results__.py
+***run_show_results__.py***
 - gets predicted masks
 - gets combined mask and image overaly
 - gets one-hot-encoded vector images of predictions
@@ -49,7 +49,7 @@ run_show_results__.py
 6. The DATA folder should have a folder called 'Train' and a folder called 'Test'. Inside each of those folders include the mask and image pairs in their respective folders (Masks, Images). 
 7. If you have set this up correctly then you are now ready to begin.
 
-Neccesary and optional inputs to the main_plus.py file:
+Neccesary and optional inputs to the ***main_plus.py*** file:
 ('-' means it is neccessary, '--' means that these are optional inputs)
 ```
  -data_directory = dataset directory path (expects there to be a 'Test' and a 'Train' folder, with folders 'Masks' and 'Images')
@@ -74,9 +74,9 @@ During training there are model checkpoints saved every epoch. At these checkpoi
 
 ## Training with a custom dataset
 1. Clone the repository
-2. Ensure your image and mask data is 512x512 pixels. *(can use the rescale_image.py in Pre-processing)*
-3. Ensure that if you resized your masks to 512x512 that they did not interpolate the colors into more color classes than you have. The expected format is RGB. *(can use the rescale_segmentation.py in Pre-processing)*
-4. You now need to go into the datahandler_plus.py file and edit the colors as necessary. For example, the Structural Materials dataset used the following format, which is in the datahandler_plus.py in this repository.
+2. Ensure your image and mask data is 512x512 pixels. *(can use the ***rescale_image.py*** in Pre-processing)*
+3. Ensure that if you resized your masks to 512x512 that they did not interpolate the colors into more color classes than you have. The expected format is RGB. *(can use the ***rescale_segmentation.py*** in Pre-processing)*
+4. You now need to go into the ***datahandler_plus.py*** file and edit the colors as necessary. For example, the Structural Materials dataset used the following format, which is in the ***datahandler_plus.py*** in this repository.
 ```
 # color mapping corresponding to classes
 # ---------------------------------------------------------------------
@@ -92,15 +92,15 @@ self.mapping = {(0,0,0): 0, (0,0,128): 1, (0,128,0): 2, (0,128,128): 3}
 8. If you have set this up correctly then you are now ready to begin.
 
 ## Building a Custom Dataset
-The images in the dataset were annotated using [labelme](https://github.com/wkentaro/labelme). We suggest that you use this tool. 
+(The images in the dataset were annotated using [labelme](https://github.com/wkentaro/labelme). We suggest that you use this tool)
 
-Before beginning to annotate, we suggest that you use jpeg for the RGB image files. We advised against beginning with images which are already resized. 
+1. Before beginning to annotate, we suggest that you use jpeg for the RGB image files. We advised against beginning with images which are already resized. 
 
-After annotating you will have matching JSON and jpeg files, indicating the annotation and image pair respectfully. 
+2. After annotating you will have matching JSON and jpeg files, indicating the annotation and image pair respectfully. 
 
-You will take these files and generate masks and one-hot-encoded vector files using run_labelme2voc_.py file in Pre-processing. Then you can re-scale these images and masks using the respective files in Pre-processing. You can also use the random sort function we have created to randomly split the data. 
+3. You will take these files and generate masks and one-hot-encoded vector files using ***run_labelme2voc_.py*** file in Pre-processing. Then you can re-scale these images and masks using the respective files in Pre-processing. You can also use the random sort function we have created to randomly split the data. 
 
-The labels_corrosion_segmentation.txt file contains the class labels needed for the run_labelme2voc_.py function. If your classes are different then they need to be reflected in this particular file.
+The ***labels_corrosion_segmentation.txt*** file contains the class labels needed for the ***run_labelme2voc_.py*** function. If your classes are different then they need to be reflected in this particular file.
 
 ## Citation
 ```
