@@ -17,6 +17,13 @@ Metal Decking
 
 The structural material segmentation dataset can be used for auxiliary structural inspection tasks to aid in the localization of structural damage, provide context to predictions, and for more futuristic style transfer [SPADE](https://arxiv.org/abs/1903.07291) and [GAN](https://arxiv.org/abs/1912.04958) / [GAN-Inversion](https://arxiv.org/abs/2101.05278) applications. 
 
+## Results
+
+<p align="center">
+    <img src="/figures/result_table.jpg" | width=800/>
+    <img src="/figures/confusion matrix.png" | width=600/>
+</p>
+
 ## Requirements
 The most important environment configurations are the following:
 - Pytorch >= 1.4
