@@ -40,7 +40,11 @@ We have also provided code on how to concatenate the mask, overlays, and images 
 
 1. Clone the repository
 2. Download the [dataset]()
-3. 
+3. Go into the Training folder
+4. Create a DATA folder
+5. Copy and paste the Train and Test folders for 512x512 images from the dataset you downloaded into the DATA folder
+6. The DATA folder should have a folder called 'Train' and a folder called 'Test'. Inside each of those folders include the mask and image pairs in their respective folders. 
+7. If you have set this up correctly then you are now ready to begin.
 
 Neccesary and optional inputs to the main_plus.py file:
 ('-' means it is neccessary, '--' means that these are optional inputs)
@@ -61,11 +65,15 @@ python main_plus.py -data_directory '/PATH TO DATA DIRECTORY/' -exp_directory '/
 --epochs 40 --batch 2
 ```
 
-During training there are model checkpoints at points defined during training. At these checkpoints one can test the current model on the validation data 
+During training there are model checkpoints saved every epoch. At these checkpoints the model is compared against the test data. If the test scores are better than the best score, then it is saved. 
 
 ## Training with a custom dataset
 1. Clone the repository
-
+2. Ensure your image and mask data is 512x512 pixels.
+3. Ensure that if you resized your masks to 512x512 that they did not interpolate the colors into more color classes than you have. The expected format 
+4. Adjust the number of 'channels' in the training command to match the number of channels that you have.
+7. Ensure that your DATA folder has a folder called 'Train' and a folder called 'Test'. Inside each of those folders include the mask and image pairs in their respective folders. 
+8. If you have set this up correctly then you are now ready to begin.
 
 ## Citation
 ```
