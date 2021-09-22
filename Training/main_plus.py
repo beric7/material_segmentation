@@ -27,8 +27,9 @@ parser.add_argument("--epochs", default=10, type=int)
 parser.add_argument("--batchsize", default=2, type=int)
 parser.add_argument("--output_stride", default=8, type=int)
 parser.add_argument("--channels", default=4, type=int)
+parser.add_argument("--pretrained", default='')
 parser.add_argument("--class_weights", nargs='+', default=None)
-parser.add_argument("--folder_structure", default='single', help='sep or single')
+parser.add_argument("--folder_structure", default='sep', help='sep or single')
 args = parser.parse_args()
 
 bpath = args.exp_directory
@@ -46,14 +47,25 @@ class_weights = args.class_weights
 print('Class weights: ' + str(class_weights))
 folder_structure = args.folder_structure
 print('folder structure: ' + folder_structure)
+model_path = args.pretrained
+print('loading pre-trained model from saved state: ' + model_path)
 
 if not os.path.exists(bpath): # if it doesn't exist already
     os.makedirs(bpath) 
 
 # Create the deeplabv3 resnet101 model which is pretrained on a subset of COCO train2017, 
 # on the 20 categories that are present in the Pascal VOC dataset.
-# TODO still need to be able to load pre-trained models into the network. 
-model = createDeepLabv3Plus(outputchannels=channels, output_stride=output_stride)
+if model_path != '':
+    try:
+        model = torch.load(model_path)
+        print('LOADED MODEL')
+        model.train()
+    except:
+        print('model path did not load')
+        model = createDeepLabv3Plus(outputchannels=channels, output_stride=output_stride)
+else:
+    model = createDeepLabv3Plus(outputchannels=channels, output_stride=output_stride)
+
 model.train()
     
 # Specify the loss function
