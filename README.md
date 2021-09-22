@@ -19,9 +19,9 @@ The structural material segmentation dataset can be used for auxiliary structura
 
 ## Requirements
 The most important environment configurations are the following:
-- Pytorch == 1.4
-- Python == 3.6
-- 
+- Pytorch >= 1.4
+- Python >= 3.6
+
 ## Evaluating Trained DeeplabV3+ Model
 - Download the DeeplabV3+ :red_circle:[trained model weights](/access/not_ready.png)
   
