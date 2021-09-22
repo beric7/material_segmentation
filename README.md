@@ -43,18 +43,20 @@ We have also provided code on how to concatenate the mask, overlays, and images 
 3. Go into the Training folder
 4. Create a DATA folder
 5. Copy and paste the Train and Test folders for 512x512 images from the dataset you downloaded into the DATA folder
-6. The DATA folder should have a folder called 'Train' and a folder called 'Test'. Inside each of those folders include the mask and image pairs in their respective folders. 
+6. The DATA folder should have a folder called 'Train' and a folder called 'Test'. Inside each of those folders include the mask and image pairs in their respective folders (Masks, Images). 
 7. If you have set this up correctly then you are now ready to begin.
 
 Neccesary and optional inputs to the main_plus.py file:
 ('-' means it is neccessary, '--' means that these are optional inputs)
 ```
- -data_directory = dataset directory path (expects there to be a 'Test' and a 'Train' folder, with folders 'masks' and 'images')
+ -data_directory = dataset directory path (expects there to be a 'Test' and a 'Train' folder, with folders 'Masks' and 'Images')
  -exp_directory = where the stored metrics and checkpoint weights will be stored
  --epochs = number of epochs
  --batchsize = batch size
  --output_stride = deeplab hyperparameter for output stride
  --channels = number of classes (we have four, the default has been set to four). 
+ --class_weights = weights for the cross entropy loss function
+ --folder_structure = 
  --pretrained = if there is a pretrained model to start with then include the path to the model weights here. 
 ```
 
@@ -70,9 +72,20 @@ During training there are model checkpoints saved every epoch. At these checkpoi
 ## Training with a custom dataset
 1. Clone the repository
 2. Ensure your image and mask data is 512x512 pixels.
-3. Ensure that if you resized your masks to 512x512 that they did not interpolate the colors into more color classes than you have. The expected format 
-4. Adjust the number of 'channels' in the training command to match the number of channels that you have.
-7. Ensure that your DATA folder has a folder called 'Train' and a folder called 'Test'. Inside each of those folders include the mask and image pairs in their respective folders. 
+3. Ensure that if you resized your masks to 512x512 that they did not interpolate the colors into more color classes than you have. The expected format is RGB. 
+4. You now need to go into the datahandler_plus.py file and edit the colors as necessary. For example, the Structural Materials dataset used the following format, which is in the datahandler_plus.py in this repository.
+```
+# color mapping corresponding to classes
+# ---------------------------------------------------------------------
+# 0 = background (Black)
+# 1 = Steel (Red)
+# 2 = Concrete (Green)
+# 3 = Metal Deck (Yellow)
+# ---------------------------------------------------------------------
+self.mapping = {(0,0,0): 0, (0,0,128): 1, (0,128,0): 2, (0,128,128): 3}
+```
+6. Adjust the number of 'channels' in the training command to match the number of channels that you have.
+7. Ensure that your DATA folder has a folder called 'Train' and a folder called 'Test'. Inside each of those folders include the mask and image pairs in their respective folders (Masks, Images). 
 8. If you have set this up correctly then you are now ready to begin.
 
 ## Citation
