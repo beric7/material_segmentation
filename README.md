@@ -38,9 +38,11 @@ We have also provided code on how to concatenate the mask, overlays, and images 
 
 ## Training with the Structural Material dataset
 
-- Clone the repository
-- Download the [dataset]()
-- 
+1. Clone the repository
+2. Download the [dataset]()
+3. 
+
+Neccesary and optional inputs to the main_plus.py file:
 ```
 main_plus inputs: ('-' means it is neccessary, '--' means that these are optional inputs)
  -data_directory = dataset directory path (expects there to be a 'Test' and a 'Train' folder, with folders 'masks' and 'images')
@@ -51,6 +53,9 @@ main_plus inputs: ('-' means it is neccessary, '--' means that these are optiona
  --channels = number of classes (we have four, the default has been set to four). 
  --pretrained = if there is a pretrained model to start with then include the path to the model weights here. 
 ```
+
+Run the following command:
+(there is an example shell script file, 'var_8plus_40epoch_3-2021_ca.sh' we used for training provided in the 'Training' folder).
 ```
 python main_plus.py -data_directory '/PATH TO DATA DIRECTORY/' -exp_directory '/PATH TO SAVE CHECKPOINTS/' \
 --epochs 40 --batch 2
