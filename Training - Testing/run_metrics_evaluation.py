@@ -21,11 +21,7 @@ model = torch.load(f'./stored_weights_plus/var_4plus/var_4plus_weights_36.pt', m
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 model.to(device)
 model.eval()   # Set model to evvar_2plus_weights_28aluate mode
-'''
-# Create the dataloader
-dataloaders = datahandler_plus.get_dataloader_sep_folder(data_dir, batch_size=batchsize)
-nnnnn = dataloaders['Test']
-'''
+
 ##############################################################################
 
 iOU, f1, confm_sum = iterate_data(model, data_dir)
