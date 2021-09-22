@@ -43,8 +43,8 @@ We have also provided code on how to concatenate the mask, overlays, and images 
 3. 
 
 Neccesary and optional inputs to the main_plus.py file:
+('-' means it is neccessary, '--' means that these are optional inputs)
 ```
-main_plus inputs: ('-' means it is neccessary, '--' means that these are optional inputs)
  -data_directory = dataset directory path (expects there to be a 'Test' and a 'Train' folder, with folders 'masks' and 'images')
  -exp_directory = where the stored metrics and checkpoint weights will be stored
  --epochs = number of epochs
