@@ -25,6 +25,7 @@ We were able to recieve an f1-score of over 94% with our trained model.
 <p align="center">
     <img src="/figures/confusion matrix.png" | width=400/>
 </p>
+
 ## Requirements
 The most important environment configurations are the following:
 - Pytorch >= 1.4
