@@ -42,6 +42,14 @@ The most important environment configurations are the following:
 - Download the DeeplabV3+ :green_circle:[trained model weights](https://doi.org/10.7294/16628620.v1)
 - Configure ***run_metrics_evaluation.py***
 
+Customize the following in ***run_metrics_evaluation.py***
+```
+data_dir = './material_detection_data/bridge_images/Test/' (PATH TO TEST DATA)
+batchsize = 1 (KEEP AT 1)
+model = torch.load(f'./stored_weights_plus/weights_XX.pt', map_location=torch.device('cuda')) (LOAD MODEL / WEIGHTS OF MODEL)
+```
+
+
 You will get the f1 score, the jaccard index, and the confusion matrix. We suggest running this in an IDE. 
   
 ## Visualizing the results from the Trained DeeplabV3+ Model
