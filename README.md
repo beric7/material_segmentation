@@ -13,7 +13,7 @@ Structural Steel
 Metal Decking
 ```
 ***Coming soon in November***
-:red_circle:\[[Paper](/access/not_ready.png)\] :red_circle:\[[Dataset](/access/not_ready.png)\] :red_circle:\[[Trained models](/access/not_ready.png)\]
+:red_circle:\[[Paper](/access/not_ready.png)\] :green_circle:\[[Dataset](https://doi.org/10.7294/16624648.v1)\] :green_circle:\[[Trained models](https://doi.org/10.7294/16628620.v1)\]
 
 The structural material segmentation dataset can be used for auxiliary structural inspection tasks to aid in the localization of structural damage, provide context to predictions, and for more futuristic style transfer [SPADE](https://arxiv.org/abs/1903.07291) and [GAN](https://arxiv.org/abs/1912.04958) / [GAN-Inversion](https://arxiv.org/abs/2101.05278) applications. 
 
@@ -120,10 +120,22 @@ self.mapping = {(0,0,0): 0, (0,0,128): 1, (0,128,0): 2, (0,128,128): 3}
 The ***labels_corrosion_segmentation.txt*** file contains the class labels needed for the ***run_labelme2voc_.py*** function. If your classes are different then they need to be reflected in this particular file.
 
 ## Citation
+
+***Structural Material Dataset:*** 
 ```
-Structural Material Dataset: 
-Structural Material Model:
-Paper:
+Bianchi, Eric; Hebdon, Matthew (2021): Structural Material Semantic Segmentation Dataset. 
+University Libraries, Virginia Tech. Dataset. https://doi.org/10.7294/16624648.v1 
+```
+
+***Structural Material Model:***
+```
+Bianchi, Eric; Hebdon, Matthew (2021): Trained Model for the Semantic Segmentation of Structural Material. 
+University Libraries, Virginia Tech. Software. https://doi.org/10.7294/16628620.v1 
+```
+
+***Paper:***
+```
+
 ```
 
 
