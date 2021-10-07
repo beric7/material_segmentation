@@ -39,7 +39,7 @@ The most important environment configurations are the following:
 - shutil
 
 ## Evaluating the Trained DeeplabV3+ Model
-- Download the DeeplabV3+ :red_circle:[trained model weights](/access/not_ready.png)
+- Download the DeeplabV3+ :red_circle:[trained model weights](https://doi.org/10.7294/16628620.v1)
 - Configure ***run_metrics_evaluation.py***
 
 You will get the f1 score, the jaccard index, and the confusion matrix. We suggest running this in an IDE. 
@@ -55,7 +55,7 @@ Once training has converged or when it has stopped, we can used the best checkpo
 ## Training with the Structural Material dataset
 
 1. Clone the repository
-2. Download the :red_circle:[dataset](/access/not_ready.png)
+2. Download the :green_circle:[dataset](https://doi.org/10.7294/16624648.v1)
 3. Go into the Training folder
 4. Create a DATA folder
 5. Copy and paste the Train and Test folders for 512x512 images from the dataset you downloaded into the DATA folder
