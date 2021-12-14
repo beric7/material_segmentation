@@ -5,6 +5,10 @@
     <img src="/figures/ex 1.jpeg" | width=800/>
 </p>
 
+<p align="center">
+    <img src="/figures/material_class_colors.png" | width=600/>
+</p>
+
 The four semantic classes in the dataset are:
 ```
 Background
