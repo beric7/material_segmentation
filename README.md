@@ -17,7 +17,7 @@ Structural Steel
 Metal Decking
 ```
 ***Coming soon in November***
-:red_circle:\[[Paper](/access/not_ready.png)\] :green_circle:\[[Dataset](https://doi.org/10.7294/16624648.v1)\] :green_circle:\[[Trained models](https://doi.org/10.7294/16628620.v1)\]
+:green_circle:\[[Paper](https://doi.org/10.1061/(ASCE)CP.1943-5487.0001045)\] :green_circle:\[[Dataset](https://doi.org/10.7294/16624648.v1)\] :green_circle:\[[Trained models](https://doi.org/10.7294/16628620.v1)\]
 
 The structural material segmentation dataset can be used for auxiliary structural inspection tasks to aid in the localization of structural damage, provide context to predictions, and for more futuristic style transfer [SPADE](https://arxiv.org/abs/1903.07291) and [GAN](https://arxiv.org/abs/1912.04958) / [GAN-Inversion](https://arxiv.org/abs/2101.05278) applications. 
 
@@ -147,7 +147,15 @@ University Libraries, Virginia Tech. Software. https://doi.org/10.7294/16628620.
 
 ***Paper:***
 ```
-
+@article{doi:10.1061/(ASCE)CP.1943-5487.0001045,
+author = {Eric Bianchi  and Matthew Hebdon },
+title = {Development of Extendable Open-Source Structural Inspection Datasets},
+journal = {Journal of Computing in Civil Engineering},
+volume = {36},
+number = {6},
+pages = {04022039},
+year = {2022},
+doi = {10.1061/(ASCE)CP.1943-5487.0001045},
 ```
 
 
